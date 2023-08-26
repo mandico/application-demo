@@ -1,11 +1,16 @@
-NAME=go-order
+NAME=go-producer
 VERSION=0.0.1
 AUTHOR=mandico
 
-.PHONY: run
-## run: Run go-order
-run:
-	@go run main.go localhost:9092 order-input
+.PHONY: docker-build
+## docker-build: Build Image
+docker-build:
+	@docker build . -t go-producer:0.1.0 --no-cache
+
+.PHONY: run-producer
+## run-producer: Run Producer
+run-producer:
+	@go run main.go localhost:9092 important
 
 .PHONY: deps-install
 ## deps-install: Install packages and dependencies

@@ -2,10 +2,15 @@ NAME=go-order
 VERSION=0.0.1
 AUTHOR=mandico
 
-.PHONY: run
-## run: Run go-order
-run:
-	@go run main.go localhost:9092 order-input
+.PHONY: run-producer
+## run-producer: Run consumer
+run-producer:
+	@go run cmd/producer/main.go localhost:9092 important
+
+.PHONY: run-consumer
+## run-consumer: Run consumer
+run-consumer:
+	@go run cmd/consumer/main.go localhost:9092 consumer important
 
 .PHONY: deps-install
 ## deps-install: Install packages and dependencies

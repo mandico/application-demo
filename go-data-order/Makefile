@@ -1,11 +1,11 @@
-NAME=go-order
+NAME=go-data-order
 VERSION=0.0.1
 AUTHOR=mandico
 
 .PHONY: run
-## run: Run go-order
+## run: Run go-data-order
 run:
-	@go run main.go localhost:9092 order-input
+	@go run main.go localhost:9092 consumer_go_data_order order-input
 
 .PHONY: deps-install
 ## deps-install: Install packages and dependencies
